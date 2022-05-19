@@ -1,24 +1,19 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[6]:
+# #### 4. NLTK 임포트하고, text4에서 4자리 단어만 출력하세요.
+
+# In[1]:
 
 
-print("세 정수의 최댓값을 구합니다.") 
+from nltk.book import *
 
-a = input("1: ") 
-b = input("2: ") 
-c = input("3: ") 
 
-max = a 
+# In[3]:
 
-if b > max: 
-    max = b 
-    
-if c > max:
-    max = c 
-    
-print("세 정수의 최댓값은", max, "입니다.")
+
+words = set([word for word in text4 if len(word) == 4])
+print(words)
 
 
 # In[ ]:

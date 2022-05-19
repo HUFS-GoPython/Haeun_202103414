@@ -1,50 +1,16 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
+# #### 1. text5에서 4번 출현하는 단어들을 중복되지 않게 오름차순으로 출력하시오.
+
+# In[19]:
 
 
-# 원가
-biyott = 480
-gimbap = 900
-coke = 380
-banana = 1050
-homerun = 770
+fdist5 = FreqDist(text5) #빈도 분포 함수
 
-# 개수
-biyott_number = 3
-gimbap_number = 5
-coke_number = 6
-banana_number = 2
-homerun_number = 4
+#set -> 중복 제거
+words = set([word for word in text5 if fdist5[word] == 4 and word.isalpha()])
+words = sorted(words) #오름차순 정렬
 
-# 소비자가 - 원가 = 이익
-biyott_revenue = int(1300 - 480) 
-gimbap_revenue = int(2500 - 900) 
-coke_revenue = int(800 - 380)
-banana_revenue = int(3200 - 1050)
-homerun_revenue = int(1500 - 770)
-
-#할인
-gimbap_price = int(2500 * 0.85 - 900)
-coke_price = int(800 *0.85 - 380)
-
-# 합계
-biyott_total = int(biyott_revenue * 3)
-gimbap_total = int(gimbap_price * 5)
-coke_total = int(coke_price * 6 )
-banana_total = int(banana_revenue * 2)
-homerun_total = int(homerun_revenue * 4)
-
-total = biyott_total + gimbap_total + coke_total + banana_total + homerun_total
-
-
-# 총매출
-print((f'편의점의 총 매출은 {total}입니다.')) 
-
-
-# In[ ]:
-
-
-
+print(words)
 
